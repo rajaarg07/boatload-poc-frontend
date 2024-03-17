@@ -1,0 +1,40 @@
+<div class="body">
+    <h1>Hello</h1>
+
+    <div *ngIf="session; else elseBlock">
+        <span>UserId:</span>
+        <h3>{{ userId }}</h3>
+        <button (click)="getCRMReport()">Get Open Deals Report</button>
+    <table class="table table-striped">  
+    <thead>  
+        <tr>  
+          <th>Record_Id</th>  
+          <th>Record_Account_Name</th>  
+          <th>Deal_Name</th>  
+          <th>Account_Name</th>
+           <th>Deal_Owner</th>  
+          <th>Closing_Date</th>  
+          <th>Stage</th>  
+          <th>Amount</th>  
+        </tr>  
+    </thead>  
+    <tbody>  
+      <tr *ngFor="let data of dataJson.openDealsLst">  
+        <td>{{ data.recordId }}</td>  
+        <td>{{  data.recordIdAccntNme }}</td>  
+        <td>{{  data.dealNme }}</td>  
+        <td>{{  data.accntName  }}</td>
+        <td>{{ data.dealOwner }}</td>  
+        <td>{{  data.closingDte }}</td>  
+        <td>{{  data.stage }}</td>  
+        <td>${{  data.amount  }}</td> 
+      </tr>  
+    </tbody>  
+  </table>  
+        <button (click)="onLogout()">Sign Out</button>
+    </div>
+    <p>Visit the <a href="https://supertokens.com">SuperTokens tutorial</a> to learn how to build Auth under a day.</p>
+    <ng-template #elseBlock>
+        <button (click)="redirectToLogin()">Sign in</button>
+    </ng-template>
+</div>

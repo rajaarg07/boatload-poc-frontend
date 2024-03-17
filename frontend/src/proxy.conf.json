@@ -1,0 +1,7 @@
+//{
+ //   "/api/*": {
+//        "target": "https://api-emailpassword.demo.supertokens.com/auth/",
+//        "secure": false,
+//        "logLevel": "debug"
+ //   }
+//}
